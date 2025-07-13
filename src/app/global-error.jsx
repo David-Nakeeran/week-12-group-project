@@ -3,7 +3,7 @@ import Link from "next/link";
 import { useEffect } from "react";
 
 // Error page runs in the client
-export default function GlobalErrorPage() {
+export default function GlobalErrorPage({ error, reset }) {
   useEffect(() => {
     console.error(error);
   }, [error]);
