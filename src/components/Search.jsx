@@ -14,12 +14,13 @@ export default function Search() {
   return (
     <input
       type="text"
-      placeholder="search"
+      placeholder="Search"
       value={query}
       onChange={(e) => {
         setQuery(e.target.value);
       }}
       onKeyDown={handleSearch}
+      className="border border-neutral-400 rounded-lg bg-white px-2 py-1 w-full lg:w-auto"
     />
   );
 }
