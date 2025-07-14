@@ -26,8 +26,8 @@ export default function SortGameFilter({ genres, platforms }) {
   function updateParams(selectedGenre, selectedPlatform) {
     const params = new URLSearchParams();
 
-    if (selectedGenre) params.set("genre", selectedGenre);
-    if (selectedPlatform) params.set("platform", selectedPlatform);
+    if (selectedGenre) params.set("genres", selectedGenre);
+    if (selectedPlatform) params.set("platforms", selectedPlatform);
 
     router.push(`/games-catalogue?${params.toString()}`);
   }
