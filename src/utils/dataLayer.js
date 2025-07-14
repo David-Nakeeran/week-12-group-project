@@ -14,7 +14,7 @@ export const dbqry = {
   getGamesByUserStatus:
     "SELECT * FROM users_games WHERE user_id=$1 AND status=$2",
   getUsersByGame:
-    "SELECT * FROM users_games JOIN users ON users_games.user_id = users.id WHERE game_id=$1",
+    "SELECT users_games.*, users.username as name, users.has_avatar as avatar FROM users_games JOIN users ON users_games.user_id = users.id WHERE game_id=$1",
   createUser: "INSERT INTO users (id,username) VALUES ($1,$2)",
   addGame: "INSERT INTO users_games (user_id,game_id,status) VALUES($1,$2,$3)",
   setAvatar: "UPDATE users SET has_avatar=$1 WHERE id=$2",
