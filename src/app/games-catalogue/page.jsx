@@ -1,13 +1,40 @@
 import Search from "@/components/Search";
 import fetchFromAPI from "@/lib/rawgApi";
+import { fetchGenresFromAPI, fetchPlatformsFromAPI } from "@/lib/rawgApi";
 import GameImageSlider from "@/components/GameImageSlider";
+import SortGameFilter from "@/components/SortGameFilter";
 import Image from "next/image";
 
 export default async function GamesCataloguePage({ searchParams }) {
   const query = await searchParams.search;
+  const genre = await searchParams.genres;
+  const platform = await searchParams.platforms;
 
-  const games = (await fetchFromAPI(`&search=${query}&page_size=6`)) || [];
-  console.log(games);
+  let queryString = "";
+
+  if (query) {
+    queryString += `&search=${query}`;
+  }
+
+  if (genre) {
+    queryString += `&genres=${genre}`;
+  }
+
+  if (platform) {
+    queryString += `&platforms=${platform}`;
+  }
+
+  if (!query && !genre && !platform) {
+    const randomPage = Math.floor(Math.random() * 10) + 1;
+    queryString += `&page=${randomPage}`;
+  }
+
+  queryString += `&page_size=6`;
+
+  const games = await fetchFromAPI(queryString);
+
+  const genres = (await fetchGenresFromAPI()) || [];
+  const platforms = (await fetchPlatformsFromAPI()) || [];
 
   const gameElements = games.map((game) => {
     console.log(game);
@@ -42,7 +69,6 @@ export default async function GamesCataloguePage({ searchParams }) {
   });
 
   const topGames = (await fetchFromAPI(`metacritic=95, 100&page_size=3`)) || [];
-  console.log(topGames);
 
   return (
     <main className="w-full grid place-items-center pl-[1.375rem] pr-[1.375rem]">
@@ -51,7 +77,8 @@ export default async function GamesCataloguePage({ searchParams }) {
       <GameImageSlider games={topGames} />
       <div className="w-full grid grid-cols-[repeat(auto-fit,_minmax(250px,1fr))]">
         <h2>Browse Games</h2>
-        <p></p>
+        <p>Sort by:</p>
+        <SortGameFilter genres={genres} platforms={platforms} />
         {gameElements}
       </div>
     </main>
