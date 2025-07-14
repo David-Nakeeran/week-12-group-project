@@ -42,7 +42,7 @@ export default async function GameDetailsPage({ params }) {
         </div>
       </div>
       <h2>Reviews</h2>
-      <Reviews />
+      <Reviews gameId={gameId} />
     </>
   );
 }

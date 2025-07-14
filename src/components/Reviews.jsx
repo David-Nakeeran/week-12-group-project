@@ -1,7 +1,33 @@
-export default function Reviews() {
+import { db } from "@/utils/dbConnection";
+
+export default async function Reviews({ gameId }) {
+  const query = await db.query(
+    `SELECT 
+    users.username,
+    users_games.user_id,
+    users_games.game_id,
+    users_games.score,
+    users_games.review
+    FROM users_games
+    JOIN users ON users_games.user_id = users.id
+    WHERE users_games.game_id = $1`,
+    [gameId]
+  );
+  const reviewData = query.rows;
+
   return (
-    <>
-      <p>A bunch of reviews</p>
-    </>
+    <div>
+      {reviewData.map((review) => {
+        return (
+          <div key={`${review.game_id}-${review.user_id}`}>
+            <div>
+              <p>{review.username}</p>
+              <p>{review.score} Star's</p>
+            </div>
+            <p>{review.review}</p>
+          </div>
+        );
+      })}
+    </div>
   );
 }
