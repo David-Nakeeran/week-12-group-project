@@ -1,6 +1,8 @@
 import GameDescription from "@/components/GameDescription";
+import GameImageSlider from "@/components/GameImageSlider";
 import ReviewFormButton from "@/components/ReviewFormButton";
 import Reviews from "@/components/Reviews";
+import ScreenshotGallery from "@/components/ScreenshotGallery";
 import { SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
 
@@ -16,19 +18,20 @@ export default async function GameDetailsPage({ params }) {
   const game = await query.json();
   console.log(game);
 
+  const shotQuery = await fetch(
+    `${baseUrl}/games/${gameId}/screenshots?key=${apiKey}`
+  );
+
+  const screenshotList = await shotQuery.json();
+  console.log(screenshotList);
+
   return (
     <>
       <h1>{game.name}</h1>
-      <Image
-        src={game.background_image}
-        alt="placeholder"
-        width={400}
-        height={400}
-      />
-      {/* <Image src="#" alt="placeholder" />
-      <Image src="#" alt="placeholder" />
-      <Image src="#" alt="placeholder" /> */}
+      <ScreenshotGallery screenshotList={screenshotList} gameName={game.name} />
+      <h2>Game Overiew:</h2>
       <GameDescription html={game.description} />
+      <h2>Game Details:</h2>
       <div>
         <div>
           <p>Release date:</p>
