@@ -42,7 +42,7 @@ export default function ProfileForm({ userId }) {
             <option value="" disabled="disabled">
               Please select one platform
             </option>
-            <option value="pc">Windows</option>
+            <option value="pc">PC</option>
             <option value="ps">Play Station</option>
             <option value="xbox">Xbox</option>
             <option value="nintendo">Nintento Switch</option>
