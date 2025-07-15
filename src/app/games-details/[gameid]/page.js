@@ -1,5 +1,7 @@
+import ReviewFormButton from "@/components/ReviewFormButton";
 import Reviews from "@/components/Reviews";
 import fetchFromAPI from "@/lib/rawgApi";
+import { SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
 
 export default async function GameDetailsPage({ params }) {
@@ -9,7 +11,7 @@ export default async function GameDetailsPage({ params }) {
 
   // For testing, Battlefield hardline Id: 3400 , GTA 5 Id: 3498
 
-  const query = await fetch(`${baseUrl}/${gameId}?key=${apiKey}`);
+  const query = await fetch(`${baseUrl}/games/${gameId}?key=${apiKey}`);
 
   const game = await query.json();
   console.log(game);
@@ -42,6 +44,9 @@ export default async function GameDetailsPage({ params }) {
         </div>
       </div>
       <h2>Reviews</h2>
+      <SignedIn>
+        <ReviewFormButton gameId={gameId} />
+      </SignedIn>
       <Reviews gameId={gameId} />
     </>
   );
