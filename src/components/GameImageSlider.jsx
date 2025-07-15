@@ -1,4 +1,5 @@
 "use client";
+import Link from "next/link";
 import { useState } from "react";
 import Image from "next/image";
 
@@ -15,14 +16,16 @@ export default function GameImageSlider({ games }) {
 
   return (
     <div className="w-full">
-      <Image
-        src={games[currentIndex].background_image}
-        alt="game screenshot"
-        width={0}
-        height={0}
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
-      />
+      <Link href={`games-details/${games[currentIndex].id}`}>
+        <Image
+          src={games[currentIndex].background_image}
+          alt="game screenshot"
+          width={0}
+          height={0}
+          sizes="100vw"
+          style={{ width: "100%", height: "auto" }}
+        />
+      </Link>
       <p className="text-center">{games[currentIndex].name}</p>
       <div className="flex gap-2 justify-center">{elements}</div>
     </div>

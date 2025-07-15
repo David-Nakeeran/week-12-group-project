@@ -1,4 +1,3 @@
-import Search from "@/components/Search";
 import fetchFromAPI from "@/lib/rawgApi";
 import { fetchGenresFromAPI, fetchPlatformsFromAPI } from "@/lib/rawgApi";
 import GameImageSlider from "@/components/GameImageSlider";
@@ -72,13 +71,16 @@ export default async function GamesCataloguePage({ searchParams }) {
 
   return (
     <main className="w-full grid place-items-center pl-[1.375rem] pr-[1.375rem]">
-      <Search />
-      <h1>Top Rated Games</h1>
-      <GameImageSlider games={topGames} />
+      <h1 className="mb-[1.5rem]">Top Rated Games</h1>
+      <div className="w-full mb-[2.5rem]">
+        <GameImageSlider games={topGames} />
+      </div>
       <div className="w-full grid grid-cols-[repeat(auto-fit,_minmax(250px,1fr))]">
-        <h2>Browse Games</h2>
-        <p>Sort by:</p>
-        <SortGameFilter genres={genres} platforms={platforms} />
+        <h2 className="mb-[1.5rem]">Browse Games</h2>
+        <div className="flex flex-col mb-[1.5rem]">
+          <p className="mb-[0.75]">Sort by:</p>
+          <SortGameFilter genres={genres} platforms={platforms} />
+        </div>
         {gameElements}
       </div>
     </main>

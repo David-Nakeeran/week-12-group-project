@@ -45,12 +45,20 @@ export default function SortGameFilter({ genres, platforms }) {
   };
 
   return (
-    <div>
-      <select onChange={handleGenreChange} defaultValue={"Genre"}>
+    <div className="flex gap-2">
+      <select
+        className="bg-white text-black border border-neutral-400 rounded p-2 w-full"
+        onChange={handleGenreChange}
+        defaultValue={"Genre"}
+      >
         <option disabled="disabled">Genre</option>
         {genreElements}
       </select>
-      <select onChange={handlePlatformChange} defaultValue={"Platform"}>
+      <select
+        className="bg-white text-black border border-neutral-400 rounded p-2 w-full"
+        onChange={handlePlatformChange}
+        defaultValue={"Platform"}
+      >
         <option disabled="disabled">Platform</option>
         {platformElements}
       </select>
