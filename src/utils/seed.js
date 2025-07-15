@@ -9,7 +9,9 @@ async function doSeeding() {
         username VARCHAR(40) NOT NULL,
         bio TEXT,
         has_avatar BOOLEAN NOT NULL DEFAULT FALSE,
-        created_at TIMESTAMPTZ NOT NULL DEFAULT now()
+        created_at TIMESTAMPTZ NOT NULL DEFAULT now(),
+        platform VARCHAR(255) NOT NULL,
+        avatar_num SMALLINT
     )`,
     `CREATE TABLE users_games (
         user_id TEXT REFERENCES users (id) ON DELETE CASCADE,
@@ -26,9 +28,10 @@ async function doSeeding() {
     `CREATE INDEX idx_gameid_userid ON users_games(game_id,user_id)`,
     `CREATE INDEX idx_userid_status ON users_games(user_id,status)`,
     `CREATE INDEX idx_userid_displayonshelf ON users_games(user_id,display_on_shelf)`,
+    `CREATE INDEX users_username_idx ON users(username)`,
     `COMMIT`,
   ])
     await db.query(q);
-  console.log("Seed data created successfully!");
+  console.log("Database and any seed data created successfully!");
 }
 doSeeding();

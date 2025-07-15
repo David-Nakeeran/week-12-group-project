@@ -2,8 +2,8 @@ import { db } from "./dbConnection.js";
 
 // Data layer usage example:
 // import { dbqry, dbget [...] } from "dataLayer";
-// const rows = dbget(dbqry.getUsersByCityAndAge(["London", 35]));
-// const rows = dbget("SELECT * FROM products");
+// const rows = await dbget(dbqry.getUsersByCityAndAge, ["London", 35]);
+// const rows = await dbget("SELECT * FROM products");
 
 export const dbqry = {
   getUserByName: "SELECT * FROM users WHERE username=$1",

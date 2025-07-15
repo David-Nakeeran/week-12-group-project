@@ -1,3 +1,5 @@
+import "server-only"; // Prevent accidental use in client components
+
 const apiKey = process.env.API_KEY;
 const baseUrl = process.env.API_BASE_URL;
 

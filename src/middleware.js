@@ -2,6 +2,7 @@ import { clerkMiddleware, createRouteMatcher } from "@clerk/nextjs/server";
 
 // Protected routes
 const isProtected = createRouteMatcher([
+  "/profile(.*)",
   // Our routes here
 ]);
 
