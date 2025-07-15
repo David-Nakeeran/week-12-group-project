@@ -9,6 +9,7 @@ export default function Search() {
   async function handleSearch(e) {
     if (e.key === "Enter" && query.trim() !== "") {
       router.push(`/games-catalogue?search=${encodeURIComponent(query)}`);
+      setQuery("");
     }
   }
   return (
