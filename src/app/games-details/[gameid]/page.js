@@ -1,6 +1,6 @@
+import GameDescription from "@/components/GameDescription";
 import ReviewFormButton from "@/components/ReviewFormButton";
 import Reviews from "@/components/Reviews";
-import fetchFromAPI from "@/lib/rawgApi";
 import { SignedIn } from "@clerk/nextjs";
 import Image from "next/image";
 
@@ -28,7 +28,7 @@ export default async function GameDetailsPage({ params }) {
       {/* <Image src="#" alt="placeholder" />
       <Image src="#" alt="placeholder" />
       <Image src="#" alt="placeholder" /> */}
-      <p>{game.description_raw}</p>
+      <GameDescription html={game.description} />
       <div>
         <div>
           <p>Release date:</p>
