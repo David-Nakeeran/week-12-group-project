@@ -45,7 +45,7 @@ export default function MobileMenu() {
       {isOpen && (
         <div
           className="fixed top-0 right-0 h-full 
-      w-full md:w-1/2  bg-white flex flex-col items-start px-6 md:px-16 py-8 space-y-6 mt-16 md:mt-20 shadow-lg z-40"
+      w-full md:w-1/2  bg-background flex flex-col items-start px-6 md:px-16 py-8 space-y-6 mt-16 md:mt-20 shadow-lg z-40"
         >
           <SignedIn>
             <UserButton />
