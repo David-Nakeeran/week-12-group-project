@@ -18,7 +18,7 @@ export default async function LandingPage() {
   });
 
   return (
-    <main className="w-full grid place-items-center pl-[1.375rem] pr-[1.375rem] mt-20 ">
+    <main className="w-full grid place-items-center px-5 md:px-16 mt-20 ">
       <Image
         src={ellipsepink}
         width="800"
@@ -52,13 +52,12 @@ export default async function LandingPage() {
           </Link>
         </div>
       </div>
-      <div className="mx-5 md:mx-16">
-        <h2 className="w-full self-start text-xl md:text-2xl mb-3 md:mb-8">
-          Top rated
-        </h2>
-        <div className=" w-full gap-4 grid grid-cols-[repeat(auto-fit,_minmax(250px,1fr))]">
-          {gameElements}
-        </div>
+
+      <h2 className="w-full self-start text-xl md:text-2xl mb-3 md:mb-8">
+        Top rated
+      </h2>
+      <div className="w-full gap-4 grid grid-cols-[repeat(auto-fit,_minmax(250px,1fr))]">
+        {gameElements}
       </div>
     </main>
   );
