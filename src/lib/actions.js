@@ -32,11 +32,17 @@ export async function submitReview(formData) {
   const rating = formData.get("rating");
   const review = formData.get("review");
 
-  await db.query(
-    `INSERT INTO users_games (user_id, game_id, score, review)
-     VALUES ($1, $2, $3, $4)`,
-    [userId, gameId, rating, review]
-  );
+  try {
+    await db.query(
+      `INSERT INTO users_games (user_id, game_id, score, review)
+       VALUES ($1, $2, $3, $4)`,
+      [userId, gameId, rating, review]
+    );
 
-  revalidatePath(`/game-details/${gameId}`);
+    revalidatePath(`/game-details/${gameId}`);
+  } catch (error) {
+    return {
+      error: "You have already submitted a review for this game!",
+    };
+  }
 }
