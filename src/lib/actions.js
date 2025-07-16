@@ -29,8 +29,13 @@ export async function submitReview(formData) {
   const { userId } = await auth();
 
   const gameId = formData.get("gameId");
-  const rating = formData.get("rating");
-  const review = formData.get("review");
+  let rating = formData.get("rating");
+  let review = formData.get("review");
+
+  // have to change them to null, the small int doesnt like the """
+
+  if (rating === "") rating = null;
+  if (review === "") review = null;
 
   await db.query(
     `UPDATE users_games
