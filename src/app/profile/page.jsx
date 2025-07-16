@@ -1,5 +1,4 @@
 import { auth } from "@clerk/nextjs/server";
-import Link from "next/link";
 import Image from "next/image";
 import { redirect } from "next/navigation";
 import { dbqry, dbget, dbgetSingle, dbpost } from "@/utils/dataLayer";

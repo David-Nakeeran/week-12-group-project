@@ -5,7 +5,7 @@ import heroImg from "@/../public/images/heroImg.jpg";
 
 export default async function LandingPage() {
   const games = (await fetchFromAPI("metacritic=90,100&page_size=6")) || [];
-  console.log(games);
+  console.log(games); // <-- do we still need this?
 
   const gameElements = games.map((game) => {
     return (
