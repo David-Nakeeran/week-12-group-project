@@ -6,7 +6,7 @@ import Image from "next/image";
 const grey_square =
   "data:image/bmp;base64,Qk0eAAAAAAAAABoAAAAMAAAAAQABAAEAGAB4eXoA";
 
-export default function ProfileGame(user_game) {
+export default function ProfileGame({ user_game }) {
   //const api_game = await fetchGame(user_game.game_id);
   //const game = { ...api_game, ...user_game }; // Merge the DB columns with the API columns
 
