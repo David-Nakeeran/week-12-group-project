@@ -3,11 +3,23 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import { dbqry, dbget, dbgetSingle, dbpost } from "@/utils/dataLayer";
 import ProfileGames from "@/components/ProfileGames";
+// import { getAvatar } from "@/lib/actions";
 
 const locale = new Intl.DateTimeFormat("en-GB"); // Hardcode UK date/time formatting
 
-function getAvatar(platform) {
-  return "/foo.jpg"; // TODO: Respond with the avatar matching the specified platform
+// function getAvatar(platform) {
+//   return "/foo.jpg"; // TODO: Respond with the avatar matching the specified platform
+// }
+
+export function getAvatar(platform) {
+  const platforms = {
+    pc: "/images/avatars/pc.png",
+    ps: "/images/avatars/ps.png",
+    xbox: "/images/avatars/xbox.png",
+    nintendo: "/images/avatars/nintendo.png",
+  };
+
+  return platforms[platform];
 }
 
 export default async function ProfilePage() {
