@@ -11,6 +11,16 @@ export default function ReviewForm({ gameId, existingReview, existingScore }) {
     submitReview(formData);
   }
 
+  async function handleDelete() {
+    const formData = new FormData();
+    formData.set("gameId", gameId);
+    // so for some reason null didnt work here, but "" does and then changing them to null in actions.js works
+    formData.set("rating", "");
+    formData.set("review", "");
+
+    await submitReview(formData);
+  }
+
   return (
     <form onSubmit={handleSubmit}>
       <input type="hidden" name="gameId" value={gameId} />
@@ -35,6 +45,12 @@ export default function ReviewForm({ gameId, existingReview, existingScore }) {
       <button type="submit">
         {existingReview ? "Edit Review" : "Submit Review"}
       </button>
+
+      {existingReview && (
+        <button type="button" onClick={handleDelete}>
+          Delete Review
+        </button>
+      )}
     </form>
   );
 }
