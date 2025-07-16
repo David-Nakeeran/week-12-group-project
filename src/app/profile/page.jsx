@@ -37,9 +37,9 @@ export default async function ProfilePage() {
       <div className="bg-card-bg rounded-2xl w-full flex flex-col items-center p-5 md:p-10">
         <Link
           href={`/profile/${user.id}/update`}
-          className=" bg-grey-button font-bold py-[0.5rem] text-lg px-[1rem] text-center rounded-[0.625em] hover:bg-button-hover hover:scale-105 transform transition-colors duration-200 self-end"
+          className=" bg-grey-button font-bold py-[0.5rem] text-lg px-[1rem] text-center rounded-[0.625em] hover:bg-button-hover hover:scale-105 transform transition-colors duration-200 self-end mb-4 md:mb-0"
         >
-          Edit
+          Edit Profile
         </Link>
         <div className="flex flex-col md:flex-row w-full md:gap-12 items-center">
           <Image
