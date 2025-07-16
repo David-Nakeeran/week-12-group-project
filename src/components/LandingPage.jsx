@@ -18,7 +18,7 @@ export default async function LandingPage() {
   });
 
   return (
-    <main className="w-full grid place-items-center px-5 md:px-16 mt-20 ">
+    <main className="w-full grid place-items-center px-5 md:px-16 mt-15 md:mt-20 ">
       <Image
         src={ellipsepink}
         width="800"
@@ -41,7 +41,7 @@ export default async function LandingPage() {
           <h1 className="text-4xl md:text-6xl mb-7 text-center ">
             Every game. One vault.
           </h1>
-          <p className="text-center md:max-w-[30dvw]">
+          <p className="text-center md:text-lg lg:max-w-[40dvw]">
             Tired of forgetting what games you've finished, started, or never
             even touched? GameVault helps you organize your entire game
             collection. From must plays to hidden gems. Log what you're playing,
@@ -56,7 +56,7 @@ export default async function LandingPage() {
       <h2 className="w-full self-start text-xl md:text-2xl mb-3 md:mb-8">
         Top rated
       </h2>
-      <div className="w-full gap-4 grid grid-cols-[repeat(auto-fit,_minmax(250px,1fr))]">
+      <div className="w-full gap-4 grid grid-rows-[1fr] md:grid-cols-2 lg:grid-cols-3 mb-4 md:mb-6">
         {gameElements}
       </div>
     </main>
