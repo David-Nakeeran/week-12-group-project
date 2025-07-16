@@ -3,32 +3,53 @@ import Image from "next/image";
 
 export default function GameCard({ game }) {
   return (
-    <div className="flex flex-col gap-1 items-center ">
+    <div className="flex flex-col gap-1 items-center bg-[#191919] p-[1.5rem] rounded-[1.25em]">
       <Image
         src={game.background_image}
         alt="game"
         width="0"
         height="0"
         sizes="100vw"
-        style={{ width: "80%", height: "auto" }}
+        style={{ width: "100%", height: "auto" }}
+        className="mb-[1rem] rounded-[0.625]"
       />
-      <p>{game.name}</p>
-      <p>Metacritic: {game.metacritic}</p>
-      <p>
-        {game.genres
-          .map((genre) => {
-            return genre.name;
-          })
-          .join(", ")}
+      <p className="text-[#ffffff] text-[1.5rem] font-bold mb-[1rem]">
+        {game.name}
       </p>
-      <p>
-        {game.parent_platforms
-          .map((element) => {
-            return element.platform.name;
-          })
-          .join(", ")}
-      </p>
-      <Link href={`games-details/${game.id}`}>See more</Link>
+      <div className="w-full flex justify-between mb-[0.5rem]">
+        <p className="text-[#D5D5D5]">Metacritic</p>
+        <p className="text-[#fff]">{game.metacritic}</p>
+      </div>
+      <div className="w-full flex justify-between gap-2 mb-[0.5rem]">
+        <p className="text-[#D5D5D5]">Genres</p>
+        <div className="text-right">
+          <p className="text-[#fff]">
+            {game.genres
+              .map((genre) => {
+                return genre.name;
+              })
+              .join(", ")}
+          </p>
+        </div>
+      </div>
+      <div className="w-full flex justify-between gap-2">
+        <p className="text-[#D5D5D5]">Platforms</p>
+        <div className="text-right">
+          <p className="text-[#fff]">
+            {game.parent_platforms
+              .map((element) => {
+                return element.platform.name;
+              })
+              .join(", ")}
+          </p>
+        </div>
+      </div>
+      <Link
+        href={`games-details/${game.id}`}
+        className="w-full bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em]"
+      >
+        See more
+      </Link>
     </div>
   );
 }
