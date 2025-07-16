@@ -11,7 +11,7 @@ export default function GameCard({ game }) {
         height="0"
         sizes="100vw"
         style={{ width: "100%", height: "auto" }}
-        className="mb-[1rem] rounded-[0.625]"
+        className="mb-[1rem] rounded-lg"
       />
       <p className="text-[#ffffff] text-[1.5rem] font-bold mb-[1rem]">
         {game.name}
@@ -32,7 +32,7 @@ export default function GameCard({ game }) {
           </p>
         </div>
       </div>
-      <div className="w-full flex justify-between gap-2">
+      <div className="w-full flex justify-between gap-2 mb-[1rem]">
         <p className="text-[#D5D5D5]">Platforms</p>
         <div className="text-right">
           <p className="text-[#fff]">
@@ -46,7 +46,7 @@ export default function GameCard({ game }) {
       </div>
       <Link
         href={`games-details/${game.id}`}
-        className="w-full bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em]"
+        className="w-full bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] hover:bg-[#3a3a3a] hover:scale-105 transform transition-colors duration-200"
       >
         See more
       </Link>
