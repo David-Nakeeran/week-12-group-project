@@ -1,6 +1,7 @@
 "use client";
 
 import Image from "next/image";
+import Link from "next/link";
 //import { fetchGame } from "@/components/ProfileServerActions";
 
 const grey_square =
@@ -11,7 +12,8 @@ export default function ProfileGame({ user_game }) {
   //const game = { ...api_game, ...user_game }; // Merge the DB columns with the API columns
 
   return (
-    <div
+    <Link
+      href={`games-details/${user_game.game_id}`}
       key={user_game.game_id}
       className="border-1 rounded-md w-full m-4 grid grid-rows-[1fr_4fr] grid-cols-2 items-center"
     >
@@ -25,6 +27,6 @@ export default function ProfileGame({ user_game }) {
         className="p-1 m-1 border-1 rounded-sm"
       />
       <div>Review: {user_game.review}</div>
-    </div>
+    </Link>
   );
 }
