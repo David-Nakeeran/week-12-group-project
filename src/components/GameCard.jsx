@@ -3,15 +3,13 @@ import Image from "next/image";
 
 export default function GameCard({ game }) {
   return (
-    <div className="flex flex-col gap-1 items-center bg-[#191919] p-[1.5rem] rounded-[1.25em]">
+    <div className="flex flex-col gap-1 items-center bg-card-bg p-[1.5rem] rounded-[1.25em] justify-between h-full">
       <Image
         src={game.background_image}
         alt="game"
-        width="0"
-        height="0"
-        sizes="100vw"
-        style={{ width: "100%", height: "auto" }}
-        className="mb-[1rem] rounded-lg"
+        width="250"
+        height="250"
+        className="object-cover w-full h-[30dvh] p-1 m-1 border-1 rounded-sm"
       />
       <p className="text-[#ffffff] text-[1.5rem] font-bold mb-[1rem]">
         {game.name}
