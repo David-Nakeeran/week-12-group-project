@@ -10,7 +10,9 @@ export default async function Reviews({ gameId }) {
     users_games.review
     FROM users_games
     JOIN users ON users_games.user_id = users.id
-    WHERE users_games.game_id = $1`,
+    WHERE users_games.game_id = $1
+      AND users_games.score IS NOT NULL
+      AND users_games.review IS NOT NULL`,
     [gameId]
   );
   const reviewData = query.rows;
