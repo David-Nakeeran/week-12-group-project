@@ -53,48 +53,57 @@ export default async function GameDetailsPage({ params }) {
   }
 
   return (
-    <>
-      <h1>{game.name}</h1>
-      <ScreenshotGallery screenshotList={screenshotList} gameName={game.name} />
-      <SignedIn>
-        <AddGame
-          gameId={gameId}
-          gameName={game.name}
-          gameImage={game.background_image}
-          hasGame={hasGame}
-          gameStatus={gameStatus}
-        />
-      </SignedIn>
-      <h2>Game Overview:</h2>
-      <GameDescription html={game.description} />
-      <h2>Game Details:</h2>
+    <main>
       <div>
         <div>
-          <p>Release date:</p>
-          <p>{game.released}</p>
+          <div>
+            <h1>{game.name}</h1>
+            <ScreenshotGallery
+              screenshotList={screenshotList}
+              gameName={game.name}
+            />
+          </div>
+          <SignedIn>
+            <AddGame
+              gameId={gameId}
+              gameName={game.name}
+              gameImage={game.background_image}
+              hasGame={hasGame}
+              gameStatus={gameStatus}
+            />
+          </SignedIn>
+          <div>
+            <h2>Game Overview:</h2>
+            <GameDescription html={game.description} />
+            <h2>Game Details:</h2>
+            <div>
+              <p>Release date:</p>
+              <p>{game.released}</p>
+            </div>
+            <div>
+              <p>Metacritic:</p>
+              <p>{game.metacritic}</p>
+            </div>
+            <div>
+              <p>Platforms:</p>
+              <p>{game.platforms.map((p) => p.platform.name).join(", ")}</p>
+            </div>
+          </div>
         </div>
-        <div>
-          <p>Metacritic:</p>
-          <p>{game.metacritic}</p>
-        </div>
-        <div>
-          <p>Platforms:</p>
-          <p>{game.platforms.map((p) => p.platform.name).join(", ")}</p>
-        </div>
+        <h2>Reviews</h2>
+        <SignedIn>
+          {hasGame ? (
+            <ReviewForm
+              gameId={gameId}
+              existingReview={userReview?.review}
+              existingScore={userReview?.score}
+            />
+          ) : (
+            <p>Please add this game to your library to add a review.</p>
+          )}
+        </SignedIn>
+        <Reviews gameId={gameId} />
       </div>
-      <h2>Reviews</h2>
-      <SignedIn>
-        {hasGame ? (
-          <ReviewForm
-            gameId={gameId}
-            existingReview={userReview?.review}
-            existingScore={userReview?.score}
-          />
-        ) : (
-          <p>Please add this game to your library to add a review.</p>
-        )}
-      </SignedIn>
-      <Reviews gameId={gameId} />
-    </>
+    </main>
   );
 }

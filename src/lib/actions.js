@@ -69,6 +69,5 @@ export async function submitGame(formData) {
      SET status = EXCLUDED.status`,
     [userId, gameId, status]
   );
-  revalidatePath(`/profile`);
-  redirect(`/profile`);
+  revalidatePath(`/game-details/${gameId}`);
 }
