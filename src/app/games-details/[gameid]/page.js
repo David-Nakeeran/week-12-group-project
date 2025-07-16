@@ -1,10 +1,8 @@
 import GameDescription from "@/components/GameDescription";
-import GameImageSlider from "@/components/GameImageSlider";
 import ReviewFormButton from "@/components/ReviewFormButton";
 import Reviews from "@/components/Reviews";
 import ScreenshotGallery from "@/components/ScreenshotGallery";
 import { SignedIn } from "@clerk/nextjs";
-import Image from "next/image";
 
 export default async function GameDetailsPage({ params }) {
   const gameId = params.gameid;
