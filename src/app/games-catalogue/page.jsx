@@ -2,8 +2,7 @@ import fetchFromAPI from "@/lib/rawgApi";
 import { fetchGenresFromAPI, fetchPlatformsFromAPI } from "@/lib/rawgApi";
 import GameImageSlider from "@/components/GameImageSlider";
 import SortGameFilter from "@/components/SortGameFilter";
-import Link from "next/link";
-import Image from "next/image";
+import GameCard from "@/components/GameCard";
 
 export default async function GamesCataloguePage({ searchParams }) {
   const query = await searchParams.search;
@@ -38,33 +37,8 @@ export default async function GamesCataloguePage({ searchParams }) {
 
   const gameElements = games.map((game) => {
     return (
-      <div key={game.id} className="flex flex-col gap-1 items-center ">
-        <Link href={`games-details/${game.id}`}>
-          <Image
-            src={game.background_image}
-            alt="game"
-            width="0"
-            height="0"
-            sizes="100vw"
-            style={{ width: "80%", height: "auto" }}
-          />
-          <p>{game.name}</p>
-          <p>Metacritic: {game.metacritic}</p>
-          <p>
-            {game.genres
-              .map((genre) => {
-                return genre.name;
-              })
-              .join(", ")}
-          </p>
-          <p>
-            {game.parent_platforms
-              .map((element) => {
-                return element.platform.name;
-              })
-              .join(", ")}
-          </p>
-        </Link>
+      <div key={game.id}>
+        <GameCard game={game} />
       </div>
     );
   });
