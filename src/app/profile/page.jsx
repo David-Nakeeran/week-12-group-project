@@ -3,6 +3,7 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import { dbqry, dbget, dbgetSingle, dbpost } from "@/utils/dataLayer";
 import ProfileGames from "@/components/ProfileGames";
+import Link from "next/link";
 
 const locale = new Intl.DateTimeFormat("en-GB"); // Hardcode UK date/time formatting
 
@@ -30,13 +31,17 @@ export default async function ProfilePage() {
 
   return (
     <div className="flex flex-col items-center gap-4 p-1 m-8 sm:m-16 lg:m-32">
+      <Link href={`/profile/${user.id}/update`} className="">
+        Edit
+      </Link>
       <Image
         className="border-1 rounded-[30%]"
         src={getAvatar(user.platform)}
         alt={`User's platform: ${user.platform}`}
-        width="200"
+        width="250"
         height="200"
       />
+
       <p className="border-1 border-[#ccc] rounded font-black text-md p-1 px-3">
         @{user.username}
       </p>
