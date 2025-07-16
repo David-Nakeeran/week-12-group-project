@@ -3,7 +3,6 @@ import Image from "next/image";
 import { redirect } from "next/navigation";
 import { dbqry, dbget, dbgetSingle, dbpost } from "@/utils/dataLayer";
 import ProfileGames from "@/components/ProfileGames";
-// import { getAvatar } from "@/lib/actions";
 
 const locale = new Intl.DateTimeFormat("en-GB"); // Hardcode UK date/time formatting
 
