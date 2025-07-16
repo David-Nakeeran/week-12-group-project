@@ -23,7 +23,7 @@ export default function Search() {
         setQuery(e.target.value);
       }}
       onKeyDown={handleSearch}
-      className="border border-neutral-400 rounded-lg bg-white px-2 py-1 w-full lg:w-auto"
+      className="border border-neutral-400 rounded-lg bg-white text-neutral-900 font-medium px-2 py-1 w-full lg:w-auto"
     />
   );
 }

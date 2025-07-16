@@ -13,8 +13,8 @@ export default function DesktopMenu() {
         href="/"
         className={`${
           currentRoute === "/"
-            ? "text-emerald-600 text-lg font-medium"
-            : "text-neutral-900 text-lg font-medium hover:underline"
+            ? "underline text-lg font-medium"
+            : "text-white text-lg font-medium hover:underline"
         }`}
       >
         Homepage
@@ -23,8 +23,8 @@ export default function DesktopMenu() {
         href="/games-catalogue"
         className={`${
           currentRoute === "/games-catalogue"
-            ? "text-emerald-600 text-lg font-medium"
-            : "text-neutral-900 text-lg font-medium hover:underline"
+            ? "underline text-lg font-medium"
+            : "text-white text-lg font-medium hover:underline"
         }`}
       >
         Games Catalogue
@@ -33,8 +33,8 @@ export default function DesktopMenu() {
         href="/profile"
         className={`${
           currentRoute === "/profile"
-            ? "text-emerald-600 text-lg font-medium"
-            : "text-neutral-900 text-lg font-medium hover:underline"
+            ? "underline text-lg font-medium"
+            : "text-white text-lg font-medium hover:underline"
         }`}
       >
         Profile
