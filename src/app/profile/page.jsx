@@ -30,27 +30,43 @@ export default async function ProfilePage() {
   const user_games = await dbget(dbqry.getGamesByUser, [userId]);
 
   return (
-    <div className="flex flex-col items-center gap-4 p-1 m-8 sm:m-16 lg:m-32">
-      <Link href={`/profile/${user.id}/update`} className="">
-        Edit
-      </Link>
-      <Image
-        className="border-1 rounded-[30%]"
-        src={getAvatar(user.platform)}
-        alt={`User's platform: ${user.platform}`}
-        width="250"
-        height="200"
-      />
+    <div className="mx-5 md:mx-16 mt-6 flex flex-col items-center gap-4">
+      <h1 className="flex w-full text-xl justify-between items-center mb-3">
+        Profile
+      </h1>
+      <div className="bg-card-bg rounded-2xl w-full flex flex-col items-center p-5 md:p-10">
+        <Link
+          href={`/profile/${user.id}/update`}
+          className=" bg-grey-button font-bold py-[0.5rem] text-lg px-[1rem] text-center rounded-[0.625em] hover:bg-button-hover hover:scale-105 transform transition-colors duration-200 self-end"
+        >
+          Edit
+        </Link>
+        <div className="flex flex-col md:flex-row w-full md:gap-12 items-center">
+          <Image
+            className="border-1 rounded-[100%] max-w-[40dvw]"
+            src={getAvatar(user.platform)}
+            alt={`User's platform: ${user.platform}`}
+            width="250"
+            height="250"
+          />
+          <div className="flex flex-col w-full items-center md:items-start">
+            <h2 className="text-lg md:text-2xl my-6">@{user.username}</h2>
+            <p className="mb-6 md:text-xl">{user.bio}</p>
+            <span className="flex w-full justify-between md:justify-start md:items-left gap-4">
+              <p className="text-sm md:text-lg text-neutral-300">
+                Member since:
+              </p>
+              <p className="text-sm md:text-lg">
+                {locale.format(new Date(user.created_at))}
+              </p>
+            </span>
+          </div>
+        </div>
+      </div>
 
-      <p className="border-1 border-[#ccc] rounded font-black text-md p-1 px-3">
-        @{user.username}
-      </p>
-      <p>{user.bio}</p>
-      <span className="flex self-stretch place-content-around">
-        <p>Member since:</p>
-        <p>{locale.format(new Date(user.created_at))}</p>
-      </span>
-      <h3 className="text-xl">Games Library</h3>
+      <h2 className="flex w-full text-xl justify-between items-center my-3 ">
+        Games Library
+      </h2>
       <ProfileGames user_games={user_games} />
     </div>
   );

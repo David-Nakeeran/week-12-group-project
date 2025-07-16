@@ -12,15 +12,25 @@
   /* buttons */
   --grey-button: #2a2a2a;
   --button-hover: #3a3a3a;
+
+  /* cards  */
+  --card-bg: #191919;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-body-text: var(--text-colour);
+  /* accents  */
   --color-blue-accent: var(--accent-blue);
   --color-pink-accent: var(--accent-pink);
+  /* fonts  */
   --font-mulish: var(--font-mulish);
   --font-daysone: var(--font-days-one);
+  /* buttons  */
+  --color-grey-button: var(--grey-button);
+  --color-button-hover: var(--button-hover);
+  /* card  */
+  --color-card-bg: var(--card-bg);
 }
 
 body {
