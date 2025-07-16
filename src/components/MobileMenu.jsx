@@ -25,17 +25,17 @@ export default function MobileMenu() {
         className="flex flex-col justify-center items-center w-8 h-8 z-50 relative"
       >
         <span
-          className={`bg-black block h-0.5 w-6 rounded-sm transition-transform duration-300 ease-in-out transform ${
+          className={`bg-white block h-0.5 w-6 rounded-sm transition-transform duration-300 ease-in-out transform ${
             isOpen ? "rotate-45 translate-y-1.5" : "-translate-y-1.5"
           }`}
         />
         <span
-          className={`bg-black block h-0.5 w-6 rounded-sm transition-all duration-300 ease-in-out my-1 ${
+          className={`bg-white block h-0.5 w-6 rounded-sm transition-all duration-300 ease-in-out my-1 ${
             isOpen ? "opacity-0" : "opacity-100"
           }`}
         />
         <span
-          className={`bg-black block h-0.5 w-6 rounded-sm transition-transform duration-300 ease-in-out transform ${
+          className={`bg-white block h-0.5 w-6 rounded-sm transition-transform duration-300 ease-in-out transform ${
             isOpen ? "-rotate-45 -translate-y-1.5" : "translate-y-1.5"
           }`}
         />

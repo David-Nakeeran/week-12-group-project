@@ -1,16 +1,18 @@
-import { Geist, Geist_Mono } from "next/font/google";
+import { Days_One, Mulish } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+const mulish = Mulish({
+  variable: "--font-mulish",
+  weight: "variable",
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
+const daysOne = Days_One({
+  variable: "--font-days-one",
+  weight: "400",
   subsets: ["latin"],
 });
 
@@ -24,7 +26,7 @@ export default function RootLayout({ children }) {
     <ClerkProvider>
       <html lang="en">
         <body
-          className={`${geistSans.variable} ${geistMono.variable} flex flex-col min-h-screen`}
+          className={`${daysOne.variable} ${mulish.className} flex flex-col min-h-screen`}
         >
           <Header />
           <main className="flex-1"> {children}</main>
