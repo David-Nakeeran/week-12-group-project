@@ -78,7 +78,9 @@ Our team used various tools to collaborate, including:
 
 ### David
 
--
+- I worked mainly on the games catalogue page, including building the search and filtering functionality, integrating the RAWG API to fetch games based on user input, and displaying the results with dynamic routing. I also helped with styling parts of the site using Tailwind, particularly making sure the layout was responsive and visually consistent.
+
+- It was great collaborating with the team everyone communicated clearly, and we were able to support each other when anyone got stuck.
 
 ### Elena
 
