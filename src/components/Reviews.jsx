@@ -21,9 +21,14 @@ export default async function Reviews({ gameId }) {
     <div>
       {reviewData.map((review) => {
         return (
-          <div key={`${review.game_id}-${review.user_id}`}>
+          <div
+            key={`${review.game_id}-${review.user_id}`}
+            className="flex flex-col gap-1 items-center bg-card-bg p-[1.5rem] rounded-[1.25em] justify-between h-full"
+          >
             <div>
-              <p>{review.username}</p>
+              <p className="w-full text-xl items-center mb-3 pt-2">
+                {review.username}
+              </p>
               <p>{review.score} Star's</p>
             </div>
             <p>{review.review}</p>

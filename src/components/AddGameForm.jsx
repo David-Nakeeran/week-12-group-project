@@ -23,15 +23,31 @@ export default function AddGameForm({
         <input type="hidden" name="gameImage" value={gameImage} />
 
         <label htmlFor="status">Select your current game status:</label>
-        <select name="status" required defaultValue={gameStatus || "W"}>
-          <option value="W">Wishlist</option>
-          <option value="O">Ongoing</option>
-          <option value="C">Completed</option>
-          <option value="D">Dropped</option>
+        <select
+          name="status"
+          required
+          defaultValue={gameStatus || "W"}
+          className="w-[60dvw] md:w-30 rounded-lg p-2 mt-2 border border-neutral-400"
+        >
+          <option value="W" className="text-neutral-900">
+            Wishlist
+          </option>
+          <option value="O" className="text-neutral-900">
+            Ongoing
+          </option>
+          <option value="C" className="text-neutral-900">
+            Completed
+          </option>
+          <option value="D" className="text-neutral-900">
+            Dropped
+          </option>
         </select>
 
-        <button type="submit">
-          {hasGame ? "Update Game Status" : "Add Game"}
+        <button
+          type="submit"
+          className="w-full bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] mt-[0.75rem] hover:bg-[#3a3a3a] hover:scale-105 transform transition-colors duration-200"
+        >
+          {hasGame ? "Update Game Status" : "Submit game status"}
         </button>
       </form>
     </>

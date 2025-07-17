@@ -18,7 +18,10 @@ export default function ReviewFormButton({
 
   return (
     <>
-      <button onClick={toggleForm}>
+      <button
+        onClick={toggleForm}
+        className="w-full bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] hover:bg-[#3a3a3a] hover:scale-105 transform transition-colors duration-200"
+      >
         {hasGame ? "Edit Game Status" : "Add a Game"}
       </button>
       {showForm ? (
