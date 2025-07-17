@@ -94,7 +94,7 @@ export default async function GameDetailsPage({ params }) {
             <h2 className="flex w-full text-xl justify-between items-center mb-3 pt-2 ">
               Game Overview:
             </h2>
-            <div className="max-h-[35dvh] overflow-y-scroll text-sm md:text-base mb-2">
+            <div className="max-h-[35dvh] overflow-y-auto text-sm md:text-base mb-2">
               <GameDescription html={game.description} />
             </div>
             <h2 className="flex w-full text-xl justify-between items-center mb-3 pt-2 ">
