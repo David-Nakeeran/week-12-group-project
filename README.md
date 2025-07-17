@@ -82,7 +82,11 @@ Our team used various tools to collaborate, including:
 
 ### Elena
 
--
+- We worked well together as a team and managed to hit our MVP without too much stress.
+- I worked on the wireframes and high fidelity designs for the app, with feedback and input from the team to shape the final look and feel.
+- I completed coding tasks throughout the project, worked on styling, and jumped in to fix bugs when they came up.
+- I also made sure Trello was up to date and added new tasks as needed to help keep everything organised.
+- Communication was generally smooth, and any issues that came up were sorted relatively quickly.
 
 ### Ryan
 
