@@ -4,6 +4,9 @@ import GameImageSlider from "@/components/GameImageSlider";
 import SortGameFilter from "@/components/SortGameFilter";
 import GameCard from "@/components/GameCard";
 import Search from "@/components/Search";
+import ellipsepink from "@/../public/images/bg-imgs/ellipsepink.svg";
+import ellipseblue from "@/../public/images/bg-imgs/ellipseblue.svg";
+import Image from "next/image";
 
 export default async function GamesCataloguePage({ searchParams }) {
   const query = await searchParams.search;
@@ -48,6 +51,21 @@ export default async function GamesCataloguePage({ searchParams }) {
 
   return (
     <main className="w-full max-w-[1022px] grid place-items-center pl-[1.375rem] pr-[1.375rem] justify-self-center">
+      <Image
+        src={ellipsepink}
+        width="800"
+        height="800"
+        className="absolute -z-10 top-0 left-0"
+        alt="gradient pink effect"
+      />
+      <Image
+        src={ellipseblue}
+        width="800"
+        height="800"
+        className="absolute -z-10 top-0 right-0"
+        alt="gradient blue effect"
+      />
+
       <h1 className="mb-[1.5rem]">Top Rated Games</h1>
       <div className="w-full mb-[2.5rem]">
         <GameImageSlider games={topGames} />
