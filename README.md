@@ -60,13 +60,13 @@ Our team used various tools to collaborate, including:
 - Our app uses the Next.js framework and also includes third party libraries
 - Our app uses dynamic routes and parameters and has filtering and sorting for our games
 - Clerk is implemented into our app and is used for the user profiles and for submitting reviews
-- we useState to manage certain infomation being displayed
+- We used useState to manage certain information being displayed
 - We used multiple different apps for planning and kept it all clear and consise so that everyone was on the same page
 - We used sematic HTML where possible and added alt text to images for accessiblility reasons
-- Our app is deployed to Vercel and includes a README.md to help others understand how to use our app
-- Thoughout the project we used git rules to protect our main branch and everytime we committed our seperate branchs we added clear messages that descibe what we did. Each commit needed to be approved by at least 1 other member of our team.
+- Our app is deployed to Vercel and includes a README.md to help others understand how to use it
+- Thoughout the project we used git rules to protect our main branch and everytime we committed our separate branches we added clear messages that describe what we did. Each commit needed to be approved by at least 1 other member of our team.
 
-## How could we further enchance this app
+## How could we further enhance this app
 
 - Adding separate profile pages for each user, allowing users to visit profiles other than their own — this was a stretch goal we didn’t reach
 - Adding custom filters for filtering games on our profiles was not achieved, we do however have the basic MVP filtering
@@ -86,8 +86,8 @@ Our team used various tools to collaborate, including:
 - We all worked really well as a team to create this app, and achieving our MVP
 - I made the games details page and everything that came with it like the reviews and adding the game to your library feature
 - I started work on using tailwind to style the page, and Elena very kindly helped to finish and clean it up!
-- We had great discussions about what to do throughout the project, we never really had any conflicts, and if we did they were very minor and handled very proffesionally
-- It was a pleasure to work with everyone and im really happy with our final project
+- We had great discussions about what to do throughout the project, we never really had any conflicts, and if we did they were very minor and handled very professionally
+- It was a pleasure to work with everyone and I'm really happy with our final project
 
 ### Jason
 
