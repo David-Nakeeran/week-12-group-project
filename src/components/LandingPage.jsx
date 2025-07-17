@@ -8,7 +8,7 @@ import { SignedOut } from "@clerk/nextjs";
 
 export default async function LandingPage() {
   const games = (await fetchFromAPI("metacritic=90,100&page_size=6")) || [];
-  console.log(games); // <-- do we still need this?
+  //console.log(games); // <-- do we still need this?
 
   const gameElements = games.map((game) => {
     return (

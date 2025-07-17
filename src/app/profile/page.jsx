@@ -4,7 +4,8 @@ import { redirect } from "next/navigation";
 import { dbqry, dbget, dbgetSingle, dbpost } from "@/utils/dataLayer";
 import ProfileGames from "@/components/ProfileGames";
 import Link from "next/link";
-
+import ellipsepink from "@/../public/images/bg-imgs/ellipsepink.svg";
+import ellipseblue from "@/../public/images/bg-imgs/ellipseblue.svg";
 const locale = new Intl.DateTimeFormat("en-GB"); // Hardcode UK date/time formatting
 
 // function getAvatar(platform) {
@@ -31,6 +32,20 @@ export default async function ProfilePage() {
 
   return (
     <div className="mx-5 md:mx-16 mt-6 flex flex-col items-center gap-4">
+      <Image
+        src={ellipsepink}
+        width="800"
+        height="800"
+        className="absolute -z-10 top-0 left-0"
+        alt="gradient pink effect"
+      />
+      <Image
+        src={ellipseblue}
+        width="800"
+        height="800"
+        className="absolute -z-10 top-0 right-0"
+        alt="gradient blue effect"
+      />
       <h1 className="flex w-full text-xl justify-between items-center mb-3">
         Profile
       </h1>

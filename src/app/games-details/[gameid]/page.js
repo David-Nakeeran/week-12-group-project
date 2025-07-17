@@ -11,7 +11,7 @@ import ellipseblue from "@/../public/images/bg-imgs/ellipseblue.svg";
 import Image from "next/image";
 
 export default async function GameDetailsPage({ params }) {
-  const gameId = params.gameid;
+  const gameId = (await params).gameid;
   const apiKey = process.env.API_KEY;
   const baseUrl = process.env.API_BASE_URL;
 
