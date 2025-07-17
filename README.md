@@ -40,9 +40,11 @@ Our team used various tools to collaborate, including:
 - Trello
 - Figma
 
+![Our wireframe](planning_screenshots/Wireframe.png)
 ![Figma screenshot 1 with the home page, signin/up and games catalogue](planning_screenshots/figma1.png)
 ![Figma screenshot 2 with the games details, and 2 profile pages](planning_screenshots/figma2.png)
 ![Our trello board we used to keep uptodate with tasks](planning_screenshots/trello.png)
+![Our Database Schema](planning_screenshots/DatabaseSchema.png)
 
 ## Resources
 
