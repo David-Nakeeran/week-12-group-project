@@ -46,11 +46,23 @@ export default function ScreenshotGallery({ screenshotList, gameName }) {
           </>
         ) : (
           <div>
-            <p>No Screenshots Available</p>
+            <p>No screenshots available D:</p>
           </div>
         )}
-        <button onClick={handlePrev}>←</button>
-        <button onClick={handleNext}>→</button>
+        <div className="flex flex-row justify-around pt-3">
+          <button
+            onClick={handlePrev}
+            className="w-fit bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] hover:bg-[#3a3a3a] hover:scale-105 transform transition-colors duration-200"
+          >
+            ←
+          </button>
+          <button
+            onClick={handleNext}
+            className="w-fit bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] hover:bg-[#3a3a3a] hover:scale-105 transform transition-colors duration-200"
+          >
+            →
+          </button>
+        </div>
       </div>
     </div>
   );
