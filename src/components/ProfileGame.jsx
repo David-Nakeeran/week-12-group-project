@@ -29,10 +29,10 @@ export default function ProfileGame({ user_game }) {
         <p className="text-sm md:text-lg pb-2">
           {user_game.score ? (
             <>
-              <div className="flex items-center gap-2">
+              <span className="flex items-center gap-2">
                 {user_game.score}
                 <StarIcon fill="#E9CF81" stroke="#E9CF81" className="w-4 h-4" />
-              </div>
+              </span>
             </>
           ) : (
             "N/A"
