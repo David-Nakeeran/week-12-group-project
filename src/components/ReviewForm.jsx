@@ -40,21 +40,21 @@ export default function ReviewForm({ gameId, existingReview, existingScore }) {
           name="rating"
           required
           defaultValue={existingScore || "5"}
-          className="w-full rounded-lg p-2 mt-4 border border-neutral-400"
+          className="w-full rounded-lg p-2 mt-4 border border-neutral-400 cursor-pointer"
         >
-          <option value="1" className="text-neutral-900">
+          <option value="1" className="text-neutral-900 cursor-pointer">
             1
           </option>
-          <option value="2" className="text-neutral-900">
+          <option value="2" className="text-neutral-900 cursor-pointer">
             2
           </option>
-          <option value="3" className="text-neutral-900">
+          <option value="3" className="text-neutral-900 cursor-pointer">
             3
           </option>
-          <option value="4" className="text-neutral-900">
+          <option value="4" className="text-neutral-900 cursor-pointer">
             4
           </option>
-          <option value="5" className="text-neutral-900">
+          <option value="5" className="text-neutral-900 cursor-pointer">
             5
           </option>
         </select>
@@ -73,7 +73,7 @@ export default function ReviewForm({ gameId, existingReview, existingScore }) {
       </fieldset>
       <button
         type="submit"
-        className="w-full bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] mt-[0.75rem] hover:bg-[#3a3a3a] hover:scale-105 transform transition-colors duration-200"
+        className="w-full bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] mt-[0.75rem] hover:bg-[#3a3a3a] hover:scale-105 transform transition-colors duration-200 cursor-pointer"
       >
         {existingReview ? "Edit Review" : "Submit Review"}
       </button>
@@ -82,7 +82,7 @@ export default function ReviewForm({ gameId, existingReview, existingScore }) {
         <button
           type="button"
           onClick={handleDelete}
-          className="w-full bg-[#b40404] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] hover:bg-[#b404048e] hover:scale-105 transform transition-colors duration-200"
+          className="w-full bg-[#b40404] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] hover:bg-[#b404048e] hover:scale-105 transform transition-colors duration-200 cursor-pointer"
         >
           Delete Review
         </button>
