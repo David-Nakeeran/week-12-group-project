@@ -1,5 +1,6 @@
 "use client";
 import { submitGame } from "@/lib/actions";
+import { toast } from "sonner";
 
 export default function AddGameForm({
   gameId,
@@ -13,6 +14,12 @@ export default function AddGameForm({
 
     const formData = new FormData(event.target);
     submitGame(formData);
+
+    {
+      hasGame
+        ? toast("Game status updated successfully.")
+        : toast("This game has been added to your library.");
+    }
   }
 
   return (
