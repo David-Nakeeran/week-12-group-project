@@ -9,7 +9,11 @@ export default function SortGameFilter({ genres, platforms }) {
 
   const genreElements = genres.map((element) => {
     return (
-      <option key={element.id} value={element.slug}>
+      <option
+        key={element.id}
+        value={element.slug}
+        className="text-neutral-900"
+      >
         {element.name}
       </option>
     );
@@ -17,7 +21,7 @@ export default function SortGameFilter({ genres, platforms }) {
 
   const platformElements = platforms.map((element) => {
     return (
-      <option key={element.id} value={element.id}>
+      <option key={element.id} value={element.id} className="text-neutral-900">
         {element.name}
       </option>
     );
