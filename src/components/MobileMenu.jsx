@@ -64,7 +64,7 @@ export default function MobileMenu() {
           <Link href="/profile" onClick={closeMenu} className="font-medium">
             Profile
           </Link>
-          <Search />
+          <Search closeMenu={closeMenu} />
         </div>
       )}
     </div>
