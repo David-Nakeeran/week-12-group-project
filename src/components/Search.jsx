@@ -2,7 +2,7 @@
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 
-export default function Search() {
+export default function Search({ closeMenu }) {
   const [query, setQuery] = useState("");
   const router = useRouter();
 
@@ -12,6 +12,7 @@ export default function Search() {
         `/games-catalogue?search=${encodeURIComponent(query)}#game-results`
       );
       setQuery("");
+      closeMenu();
     }
   }
   return (
