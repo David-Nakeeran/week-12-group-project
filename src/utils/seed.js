@@ -13,6 +13,11 @@ async function doSeeding() {
         platform VARCHAR(255) NOT NULL,
         avatar_num SMALLINT
     )`,
+    `CREATE TABLE games (
+        id INT PRIMARY KEY,
+        name VARCHAR(255) NOT NULL,
+        background_image_uri TEXT NOT NULL
+    )`,
     `CREATE TABLE users_games (
         user_id TEXT REFERENCES users (id) ON DELETE CASCADE,
         game_id INT REFERENCES games (id) ON UPDATE CASCADE,
@@ -24,11 +29,6 @@ async function doSeeding() {
         completed_at TIMESTAMPTZ,
         display_on_shelf BOOLEAN NOT NULL DEFAULT FALSE,
         PRIMARY KEY (user_id, game_id)
-    )`,
-    `CREATE TABLE games (
-        id INT PRIMARY KEY,
-        name VARCHAR(255) NOT NULL,
-        background_image_uri TEXT NOT NULL
     )`,
     `CREATE INDEX idx_gameid_userid ON users_games(game_id,user_id)`,
     `CREATE INDEX idx_userid_status ON users_games(user_id,status)`,

@@ -15,9 +15,10 @@ export const dbqry = {
     "SELECT * FROM users_games JOIN games ON game_id=id WHERE user_id=$1 AND category=$2",
   getGamesByUserStatus:
     "SELECT * FROM users_games JOIN games ON game_id=id WHERE user_id=$1 AND status=$2",
+  // TODO: If DB gets large, create getUserGame
   getUsersByGame:
     "SELECT users_games.*, users.username as name, users.has_avatar as avatar FROM users_games JOIN users ON users_games.user_id = users.id WHERE game_id=$1",
-  createUser: "INSERT INTO users (id,username) VALUES ($1,$2)",
+  createUser: "INSERT INTO users (id,username,platform) VALUES ($1,$2,$3)",
   addGame: "INSERT INTO games (id,name,background_image_uri) VALUES($1,$2,$3)",
   upsertGame:
     "INSERT INTO games (id,name,background_image_uri) VALUES($1,$2,$3) ON CONFLICT (id) DO UPDATE SET name=EXCLUDED.name, background_image_uri=EXCLUDED.background_image_uri",
