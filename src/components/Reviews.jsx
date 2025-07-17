@@ -1,4 +1,5 @@
 import { db } from "@/utils/dbConnection";
+import { StarIcon } from "lucide-react";
 
 export default async function Reviews({ gameId }) {
   const query = await db.query(
@@ -18,18 +19,18 @@ export default async function Reviews({ gameId }) {
   const reviewData = query.rows;
 
   return (
-    <div>
+    <div className="w-full h-fit justify-center items-center  md:max-w-full">
       {reviewData.map((review) => {
         return (
           <div
             key={`${review.game_id}-${review.user_id}`}
-            className="flex flex-col gap-1 items-center bg-card-bg p-[1.5rem] rounded-[1.25em] justify-between h-full"
+            className="bg-card-bg rounded-2xl p-[1.5rem] mb-4"
           >
-            <div>
-              <p className="w-full text-xl items-center mb-3 pt-2">
-                {review.username}
+            <div className="flex justify-between pb-4">
+              <p className="text-xl">{review.username}</p>
+              <p className="flex gap-2 items-center">
+                {review.score} <StarIcon fill="#E9CF81" strokeWidth={0} />
               </p>
-              <p>{review.score} Star's</p>
             </div>
             <p>{review.review}</p>
           </div>

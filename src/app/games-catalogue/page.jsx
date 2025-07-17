@@ -65,25 +65,33 @@ export default async function GamesCataloguePage({ searchParams }) {
         className="absolute -z-10 top-0 right-0"
         alt="gradient blue effect"
       />
-
       <h1 className="mb-[1.5rem]">Top Rated Games</h1>
       <div className="w-full mb-[2.5rem]">
         <GameImageSlider games={topGames} />
       </div>
-      <div
-        id="game-results"
-        className="w-full grid grid-cols-[repeat(auto-fit,_minmax(250px,1fr))] gap-[1.5rem]"
-      >
-        <h2 className="mb-[1.5rem]">Browse Games</h2>
-        <div>
+      <div id="game-results" className="w-full grid gap-[1.5rem]">
+        <div className="flex flex-col gap-2 max-w-[300px]">
+          <h2 className="text-[1.25rem]">Browse Games</h2>
           <Search />
+          {query && (
+            <p className="text-[1rem] sm:text-[1.1rem]">
+              You searched for: {query}
+            </p>
+          )}
         </div>
-        <div className="flex flex-col mb-[1.5rem]">
-          <p className="mb-[0.75]">Sort by:</p>
-          <SortGameFilter genres={genres} platforms={platforms} />
-          {query ? <p>You searched for: {query} </p> : null}
+
+        <div className="flex flex-col items-start sm:items-end justify-end gap-2">
+          <div className="flex flex-wrap items-center gap-2">
+            <p className="text-[1rem] whitespace-nowrap sm:pb-[0.52rem]">
+              Sort by:
+            </p>
+            <SortGameFilter genres={genres} platforms={platforms} />
+          </div>
         </div>
-        {gameElements}
+
+        <div className="grid grid-cols-[repeat(auto-fit,_minmax(250px,1fr))] gap-[1.5rem]">
+          {gameElements}
+        </div>
       </div>
     </main>
   );

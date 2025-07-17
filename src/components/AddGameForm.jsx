@@ -34,7 +34,7 @@ export default function AddGameForm({
           name="status"
           required
           defaultValue={gameStatus || "W"}
-          className="w-[60dvw] md:w-30 rounded-lg p-2 mt-2 border border-neutral-400"
+          className=" w-full  rounded-lg p-2 mt-2 border border-neutral-400"
         >
           <option value="W" className="text-neutral-900">
             Wishlist

@@ -4,6 +4,7 @@ import fetchFromAPI from "@/lib/rawgApi";
 import GameCard from "./GameCard";
 import ellipsepink from "@/../public/images/bg-imgs/ellipsepink.svg";
 import ellipseblue from "@/../public/images/bg-imgs/ellipseblue.svg";
+import { SignedOut } from "@clerk/nextjs";
 
 export default async function LandingPage() {
   const games = (await fetchFromAPI("metacritic=90,100&page_size=6")) || [];
@@ -47,9 +48,11 @@ export default async function LandingPage() {
             collection. From must plays to hidden gems. Log what you're playing,
             track your progress, and relive the games you've conquered.
           </p>
-          <Link href={"/sign-up"} className="button-gradient font-bold">
-            Join GameVault
-          </Link>
+          <SignedOut>
+            <Link href={"/sign-up"} className="button-gradient font-bold">
+              Join GameVault
+            </Link>
+          </SignedOut>
         </div>
       </div>
 
