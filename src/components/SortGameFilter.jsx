@@ -45,9 +45,9 @@ export default function SortGameFilter({ genres, platforms }) {
   };
 
   return (
-    <div className="flex gap-2">
+    <div className="flex gap-2 mt-[0.75rem] mb-[1.2rem]">
       <select
-        className="bg-white text-black border border-neutral-400 rounded p-2 w-full"
+        className="bg-transparent text-[#FFF] border border-[#CDCCCC] font-bold rounded-[0.625rem] p-2 w-full"
         onChange={handleGenreChange}
         defaultValue={"Genre"}
       >
@@ -55,7 +55,7 @@ export default function SortGameFilter({ genres, platforms }) {
         {genreElements}
       </select>
       <select
-        className="bg-white text-black border border-neutral-400 rounded p-2 w-full"
+        className="bg-transparent text-[#FFF] border border-[#CDCCCC] font-bold rounded-[0.625rem] p-2 w-full"
         onChange={handlePlatformChange}
         defaultValue={"Platform"}
       >
