@@ -13,7 +13,6 @@ export default function GameImageSlider({ games }) {
       </div>
     );
   });
-  console.log(games);
 
   return (
     <div className="w-full grid place-items-center">
