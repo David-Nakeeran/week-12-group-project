@@ -2,6 +2,7 @@
 
 "use client";
 import { submitReview } from "../lib/actions";
+import { toast } from "sonner";
 
 export default function ReviewForm({ gameId, existingReview, existingScore }) {
   async function handleSubmit(event) {
@@ -9,6 +10,7 @@ export default function ReviewForm({ gameId, existingReview, existingScore }) {
 
     const formData = new FormData(event.target);
     submitReview(formData);
+    toast("Your review has been submited.");
   }
 
   async function handleDelete() {
@@ -19,6 +21,7 @@ export default function ReviewForm({ gameId, existingReview, existingScore }) {
     formData.set("review", "");
 
     await submitReview(formData);
+    toast("Your review has been deleted.");
   }
 
   return (
