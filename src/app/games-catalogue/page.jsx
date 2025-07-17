@@ -9,9 +9,9 @@ import ellipseblue from "@/../public/images/bg-imgs/ellipseblue.svg";
 import Image from "next/image";
 
 export default async function GamesCataloguePage({ searchParams }) {
-  const query = await searchParams.search;
-  const genre = await searchParams.genres;
-  const platform = await searchParams.platforms;
+  const query = (await searchParams).search;
+  const genre = (await searchParams).genres;
+  const platform = (await searchParams).platforms;
 
   let queryString = "";
 
