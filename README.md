@@ -45,6 +45,7 @@ Our team used various tools to collaborate, including:
 ![Figma screenshot 2 with the games details, and 2 profile pages](planning_screenshots/figma2.png)
 ![Our trello board we used to keep uptodate with tasks](planning_screenshots/trello.png)
 ![Our Database Schema](planning_screenshots/DatabaseSchema.png)
+![Our route map](planning_screenshots/figjam_routemap.png)
 
 ## Resources
 
