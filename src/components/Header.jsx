@@ -13,8 +13,8 @@ export default async function Header() {
 
       <nav className="flex justify-between gap-4">
         <SignedOut>
-          <SignInButton />
-          <SignUpButton />
+          <SignInButton className="text-lg font-medium hover:underline" />
+          <SignUpButton className="text-lg font-medium hover:underline" />
         </SignedOut>
         {userId ? <LoggedInNav /> : null}
       </nav>
