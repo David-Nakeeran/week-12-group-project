@@ -27,43 +27,50 @@ export default function ReviewForm({ gameId, existingReview, existingScore }) {
   return (
     <form
       onSubmit={handleSubmit}
-      className="flex flex-col gap-1 items-center bg-card-bg p-[1.5rem] rounded-[1.25em] justify-between h-full"
+      className="flex flex-col gap-1 items-center bg-card-bg p-[1.5rem] rounded-[1.25em] justify-betweenw w-full md:max-w-[35dvw]"
     >
-      <input type="hidden" name="gameId" value={gameId} />
+      <fieldset className="w-full space-y-4">
+        <h2 className="mb-4">Review this game</h2>
 
-      <label htmlFor="rating">Rate the game out of 5:</label>
-      <select
-        name="rating"
-        required
-        defaultValue={existingScore || "5"}
-        className="w-[60dvw] md:w-[5dvw] rounded-lg p-2 mt-2 border border-neutral-400"
-      >
-        <option value="1" className="text-neutral-900">
-          1
-        </option>
-        <option value="2" className="text-neutral-900">
-          2
-        </option>
-        <option value="3" className="text-neutral-900">
-          3
-        </option>
-        <option value="4" className="text-neutral-900">
-          4
-        </option>
-        <option value="5" className="text-neutral-900">
-          5
-        </option>
-      </select>
+        <input type="hidden" name="gameId" value={gameId} />
+        <label htmlFor="rating" className="self-start">
+          Rate the game out of 5:
+        </label>
+        <select
+          name="rating"
+          required
+          defaultValue={existingScore || "5"}
+          className="w-full rounded-lg p-2 mt-4 border border-neutral-400"
+        >
+          <option value="1" className="text-neutral-900">
+            1
+          </option>
+          <option value="2" className="text-neutral-900">
+            2
+          </option>
+          <option value="3" className="text-neutral-900">
+            3
+          </option>
+          <option value="4" className="text-neutral-900">
+            4
+          </option>
+          <option value="5" className="text-neutral-900">
+            5
+          </option>
+        </select>
 
-      <label htmlFor="review">Your review:</label>
-      <input
-        type="text"
-        name="review"
-        required
-        defaultValue={existingReview || ""}
-        className="border border-neutral-400 rounded-lg bg-white text-neutral-900 font-medium px-2 py-1 w-full lg:w-auto pb-1"
-      />
-
+        <label htmlFor="review" className="self-start pt-2 ">
+          Your review:
+        </label>
+        <textarea
+          type="text"
+          name="review"
+          rows={3}
+          required
+          defaultValue={existingReview || ""}
+          className="border border-neutral-400 mt-4 rounded-lg bg-white text-neutral-900 font-medium px-2 py-1 w-full pb-1"
+        />
+      </fieldset>
       <button
         type="submit"
         className="w-full bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] mt-[0.75rem] hover:bg-[#3a3a3a] hover:scale-105 transform transition-colors duration-200"

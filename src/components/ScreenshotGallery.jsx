@@ -39,8 +39,9 @@ export default function ScreenshotGallery({ screenshotList, gameName }) {
             <Image
               src={currentImage.image}
               alt={`${gameName} screenshots`}
-              height={720}
-              width={1280}
+              height={600}
+              width={600}
+              className="object-cover w-auto h-[55dvh] p-1 m-1 rounded-xl"
             />
             <p>{currentImage.img_alt}</p>
           </>
@@ -49,7 +50,7 @@ export default function ScreenshotGallery({ screenshotList, gameName }) {
             <p>No screenshots available D:</p>
           </div>
         )}
-        <div className="flex flex-row justify-around pt-3">
+        <div className="flex flex-row justify-between md:justify-end gap-2 pt-3 ">
           <button
             onClick={handlePrev}
             className="w-fit bg-[#2A2A2A] text-[#FFFFFF] font-bold pt-[0.75rem] pb-[0.75rem] pr-[1rem] pl-[1rem] text-center rounded-[0.625em] mb-[0.75rem] hover:bg-[#3a3a3a] hover:scale-105 transform transition-colors duration-200"
