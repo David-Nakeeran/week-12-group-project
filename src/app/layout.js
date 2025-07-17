@@ -2,6 +2,8 @@ import { Days_One, Mulish } from "next/font/google";
 import { ClerkProvider } from "@clerk/nextjs";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
+import { Toaster } from "@/components/ui/sonner";
+
 import "./globals.css";
 
 const mulish = Mulish({
@@ -30,6 +32,7 @@ export default function RootLayout({ children }) {
         >
           <Header />
           <main className="flex-1"> {children}</main>
+          <Toaster />
           <Footer />
         </body>
       </html>
