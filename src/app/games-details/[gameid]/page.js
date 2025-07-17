@@ -56,7 +56,7 @@ export default async function GameDetailsPage({ params }) {
   }
 
   return (
-    <main className="w-full grid place-items-center px-5 md:px-16 mt-15 md:mt-20 ">
+    <main className="w-full grid place-items-center px-5 md:px-16 mt-6">
       <Image
         src={ellipsepink}
         width="800"
@@ -74,61 +74,75 @@ export default async function GameDetailsPage({ params }) {
       <h1 className="flex w-full text-xl justify-between items-center mb-3">
         {game.name}
       </h1>
-      <div className="bg-card-bg rounded-2xl w-full flex flex-col items-center p-5 md:p-10">
-        <div>
-          <ScreenshotGallery
-            screenshotList={screenshotList}
-            gameName={game.name}
-          />
-        </div>
-        <SignedIn>
-          <AddGame
-            gameId={gameId}
-            gameName={game.name}
-            gameImage={game.background_image}
-            hasGame={hasGame}
-            gameStatus={gameStatus}
-          />
-        </SignedIn>
-        <div>
-          <h2 className="flex w-full text-xl justify-between items-center mb-3 pt-2">
-            Game Overview:
-          </h2>
-          <GameDescription html={game.description} />
-          <h2 className="flex w-full text-xl justify-between items-center mb-3 pt-2">
-            Game Details:
-          </h2>
-          <div className="w-full flex justify-between mb-[0.5rem]">
-            <p className="text-[#D5D5D5]">Release date:</p>
-            <p className="text-[#fff]">{game.released}</p>
-          </div>
-          <div className="w-full flex justify-between mb-[0.5rem]">
-            <p className="text-[#D5D5D5]">Metacritic:</p>
-            <p className="text-[#fff]">{game.metacritic}</p>
-          </div>
-          <div className="w-full flex justify-between mb-[0.5rem]">
-            <p className="text-[#D5D5D5]">Platforms:</p>
-            <p className="text-[#fff] text-right">
-              {game.platforms.map((p) => p.platform.name).join(", ")}
-            </p>
+      <div className="bg-card-bg rounded-2xl w-full gap-6 grid grid-rows-[1fr] md:grid-cols-2 items-center justify-center p-5 md:p-10">
+        <ScreenshotGallery
+          screenshotList={screenshotList}
+          gameName={game.name}
+        />
+
+        <div className="flex flex-col h-full">
+          <SignedIn>
+            <AddGame
+              gameId={gameId}
+              gameName={game.name}
+              gameImage={game.background_image}
+              hasGame={hasGame}
+              gameStatus={gameStatus}
+            />
+          </SignedIn>
+          <div>
+            <h2 className="flex w-full text-xl justify-between items-center mb-3 pt-2 ">
+              Game Overview:
+            </h2>
+            <div className="max-h-[35dvh] overflow-y-scroll text-sm md:text-base mb-2">
+              <GameDescription html={game.description} />
+            </div>
+            <h2 className="flex w-full text-xl justify-between items-center mb-3 pt-2 ">
+              Game Details:
+            </h2>
+            <div className="w-full flex justify-between mb-[0.5rem]">
+              <p className="text-[#D5D5D5]">Release date:</p>
+              <p className="text-[#fff]">
+                {" "}
+                {game.released
+                  ? new Intl.DateTimeFormat("en-GB").format(
+                      new Date(game.released)
+                    )
+                  : "N/A"}
+              </p>
+            </div>
+            <div className="w-full flex justify-between mb-[0.5rem]">
+              <p className="text-[#D5D5D5]">Metacritic:</p>
+              <p className="text-[#fff]">{game.metacritic}</p>
+            </div>
+            <div className="w-full flex justify-between mb-[0.5rem]">
+              <p className="text-[#D5D5D5]">Platforms:</p>
+              <p className="text-[#fff] text-right">
+                {game.platforms.map((p) => p.platform.name).join(", ")}
+              </p>
+            </div>
           </div>
         </div>
       </div>
-      <h2 className="flex w-full text-xl justify-between items-center mb-3 py-3">
+      <h2 className="flex w-full text-xl justify-between items-center my-3 py-3">
         Reviews
       </h2>
-      <SignedIn>
-        {hasGame ? (
-          <ReviewForm
-            gameId={gameId}
-            existingReview={userReview?.review}
-            existingScore={userReview?.score}
-          />
-        ) : (
-          <p>Please add this game to your library to add a review.</p>
-        )}
-      </SignedIn>
-      <Reviews gameId={gameId} />
+      <div className="w-full flex flex-col md:flex-row-reverse gap-4 justify-between mb-4">
+        <SignedIn>
+          {hasGame ? (
+            <ReviewForm
+              gameId={gameId}
+              existingReview={userReview?.review}
+              existingScore={userReview?.score}
+            />
+          ) : (
+            <p className="bg-card-bg rounded-2xl p-[1.5rem] mb-4">
+              Please add this game to your library to add a review.
+            </p>
+          )}
+        </SignedIn>
+        <Reviews gameId={gameId} />
+      </div>
     </main>
   );
 }
