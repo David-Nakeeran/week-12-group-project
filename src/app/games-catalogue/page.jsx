@@ -47,7 +47,7 @@ export default async function GamesCataloguePage({ searchParams }) {
   const topGames = (await fetchFromAPI(`metacritic=95, 100&page_size=3`)) || [];
 
   return (
-    <main className="w-full grid place-items-center pl-[1.375rem] pr-[1.375rem]">
+    <main className="w-full max-w-[1022px] grid place-items-center pl-[1.375rem] pr-[1.375rem] justify-self-center">
       <h1 className="mb-[1.5rem]">Top Rated Games</h1>
       <div className="w-full mb-[2.5rem]">
         <GameImageSlider games={topGames} />
