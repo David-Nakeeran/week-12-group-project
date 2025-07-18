@@ -100,4 +100,6 @@ Our team used various tools to collaborate, including:
 
 ### Jason
 
--
+- I worked on planning the data structure and setting up the relationships and constraints needed to cover our MVP and any stretch goals we were looking forward to; and on building a data layer to abstract the storage logic from the business logic. This involved a lot of back-and-forth and feedback in the early planning stages. I also created the initial version of the user profile page and some styling, and focused on code review, requirements review, debugging and system testing in the final stages.
+- I had the usual practical difficulties with working in a mainly verbal environment over videolink, but not as bad as in earlier projects despite the team being larger. I put this partly down to our cohort in general being more experienced now at managing team projects; partly down to our more detailed advance planning making it easier for me to keep in touch; and partly down to my having had some practice now at working around my limitations.
+- From start to finish everyone was determined to communicate well and keen to make the project work, and by working together we overcame every problem as it arose.
